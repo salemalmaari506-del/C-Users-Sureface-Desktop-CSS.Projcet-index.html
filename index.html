@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İnkaya Hotel – Bursa, Turkey</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Tajawal:wght@300;400;500;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C8A96E;
+            --gold-light: #E8D4A8;
+            --gold-dark: #8B6E3A;
+            --dark: #0F0E0C;
+            --dark2: #1A1916;
+            --dark3: #242320;
+            --cream: #F5F0E8;
+            --cream2: #EDE6D6;
+            --text-muted: #8A8070;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--dark);
+            color: var(--cream);
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.2rem 4rem;
+            background: rgba(15, 14, 12, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(200, 169, 110, 0.15);
+            transition: all 0.3s;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--gold);
+            letter-spacing: 0.05em;
+        }
+
+        .nav-logo span {
+            color: var(--cream);
+            font-weight: 400;
+            font-size: 0.8em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            opacity: 0.8;
+            transition: opacity 0.2s, color 0.2s;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: var(--gold);
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 0.4rem;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid rgba(200, 169, 110, 0.4);
+            color: var(--gold);
+            font-size: 0.75rem;
+            padding: 0.35rem 0.7rem;
+            border-radius: 2px;
+            cursor: pointer;
+            font-family: 'Tajawal', sans-serif;
+            letter-spacing: 0.05em;
+            transition: all 0.2s;
+        }
+
+        .lang-btn.active,
+        .lang-btn:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to bottom, rgba(15, 14, 12, 0.3) 0%, rgba(15, 14, 12, 0.6) 60%, rgba(15, 14, 12, 1) 100%),
+                url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1800&q=80') center/cover no-repeat;
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: center;
+            padding: 2rem;
+            animation: fadeUp 1.2s ease both;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-eyebrow {
+            font-size: 0.75rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            font-weight: 900;
+            line-height: 1;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: var(--cream2);
+            opacity: 0.8;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--dark);
+            padding: 0.9rem 2.5rem;
+            border: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 1px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+            font-family: 'Tajawal', sans-serif;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(200, 169, 110, 0.6);
+            color: var(--gold);
+            padding: 0.9rem 2.5rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 1px;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-family: 'Tajawal', sans-serif;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background: rgba(200, 169, 110, 0.1);
+            border-color: var(--gold);
+        }
+
+        /* BOOKING BAR */
+        .booking-bar {
+            background: var(--dark2);
+            border-top: 1px solid rgba(200, 169, 110, 0.2);
+            border-bottom: 1px solid rgba(200, 169, 110, 0.2);
+            padding: 1.5rem 4rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .booking-bar label {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .booking-bar input,
+        .booking-bar select {
+            background: var(--dark2);
+            border: none;
+            border-bottom: 1px solid rgba(200, 169, 110, 0.4);
+            color: var(--cream);
+            padding: 0.4rem 0.2rem;
+            font-size: 0.95rem;
+            outline: none;
+            font-family: 'Tajawal', sans-serif;
+            width: 140px;
+            transition: border-color 0.2s;
+        }
+
+        .booking-bar input:focus,
+        .booking-bar select:focus {
+            border-color: var(--gold);
+        }
+
+        .booking-bar input option {
+            background: var(--dark2);
+        }
+
+        .divider-v {
+            width: 1px;
+            height: 48px;
+            background: rgba(200, 169, 110, 0.2);
+            flex-shrink: 0;
+        }
+
+        /* SECTION COMMON */
+        section {
+            padding: 6rem 4rem;
+        }
+
+        .section-eyebrow {
+            font-size: 0.7rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.8rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--cream);
+            margin-bottom: 1.2rem;
+        }
+
+        .section-title em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.8;
+            max-width: 540px;
+        }
+
+        /* ABOUT */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            background: var(--dark);
+        }
+
+        .about-images {
+            position: relative;
+            height: 520px;
+        }
+
+        .about-img-main {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 75%;
+            height: 85%;
+            object-fit: cover;
+            border: 3px solid var(--dark2);
+        }
+
+        .about-img-accent {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50%;
+            height: 55%;
+            object-fit: cover;
+            border: 3px solid var(--dark2);
+            border: 4px solid var(--dark);
+        }
+
+        .gold-badge {
+            position: absolute;
+            top: 50%;
+            left: 55%;
+            transform: translate(-50%, -50%);
+            background: var(--gold);
+            color: var(--dark);
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            z-index: 2;
+        }
+
+        .gold-badge .num {
+            font-size: 1.6rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .gold-badge .txt {
+            font-size: 0.55rem;
+            letter-spacing: 0.1em;
+            text-align: center;
+        }
+
+        .stats-row {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat .num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+        }
+
+        .stat .lbl {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+        }
+
+        /* AMENITIES */
+        .amenities {
+            background: var(--dark2);
+        }
+
+        .amenities-grid {
+            display: flex;
+            gap: 1px;
+            background: rgba(200, 169, 110, 0.1);
+            margin-top: 1rem;
+            border: 1px solid rgba(200, 169, 110, 0.1);
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .amenity-card {
+            background: var(--dark2);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .amenity-card:hover {
+            background: var(--dark3);
+        }
+
+        .amenity-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .amenity-card h3 {
+            font-size: 0.95rem;
+            color: var(--cream);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .amenity-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ROOMS */
+        .rooms {
+            background: var(--dark);
+        }
+
+        .rooms-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .room-card {
+            background: var(--dark2);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .room-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .room-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .room-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .room-img-wrap {
+            overflow: hidden;
+        }
+
+        .room-info {
+            padding: 1.5rem;
+        }
+
+        .room-type {
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .room-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 0.8rem;
+        }
+
+        .room-features {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .room-feat {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .room-price-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid rgba(200, 169, 110, 0.15);
+            padding-top: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .room-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--gold);
+        }
+
+        .room-price span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        /* REVIEWS */
+        .reviews {
+            background: var(--dark2);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .review-card {
+            background: var(--dark3);
+            padding: 2rem;
+            position: relative;
+            border-top: 2px solid var(--gold);
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        .review-text {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: var(--cream2);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .review-author {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .review-author strong {
+            color: var(--cream);
+            display: block;
+        }
+
+        /* LOCATION */
+        .location {
+            background: var(--dark);
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            margin-top: 3rem;
+        }
+
+        .location-map {
+            width: 100%;
+            height: 360px;
+            background: var(--dark2);
+            border: 1px solid rgba(200, 169, 110, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .location-list {
+            list-style: none;
+        }
+
+        .location-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(200, 169, 110, 0.1);
+        }
+
+        .location-list li:last-child {
+            border-bottom: none;
+        }
+
+        .loc-icon {
+            font-size: 1.3rem;
+            margin-top: 0.1rem;
+            flex-shrink: 0;
+        }
+
+        .loc-info h4 {
+            font-size: 0.9rem;
+            color: var(--cream);
+            margin-bottom: 0.2rem;
+        }
+
+        .loc-info p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* CTA */
+        .cta-section {
+            background: var(--gold);
+            padding: 5rem 4rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--dark);
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: var(--dark);
+            opacity: 0.7;
+            margin-bottom: 2rem;
+        }
+
+        .btn-dark {
+            background: var(--dark);
+            color: var(--gold);
+            padding: 1rem 3rem;
+            border: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 1px;
+            font-family: 'Tajawal', sans-serif;
+            transition: background 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-dark:hover {
+            background: #1A1916;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            padding: 4rem 4rem 2rem;
+            border-top: 1px solid rgba(200, 169, 110, 0.15);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(200, 169, 110, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* MULTILINGUAL */
+        [lang="ar"] .section-desc {
+            direction: rtl;
+        }
+
+        [lang="tr"] .section-desc {
+            direction: ltr;
+        }
+
+        [lang="en"] .section-desc {
+            direction: ltr;
+        }
+
+        .rtl-nav {
+            flex-direction: row-reverse;
+        }
+
+        /* SCROLL REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .about-images {
+                height: 320px;
+            }
+
+            .rooms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .booking-bar {
+                padding: 1.2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav id="navbar">
+        <div class="nav-logo">İnkaya <span>Hotel</span></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about" data-i18n="nav_about">عن الفندق</a></li>
+            <li><a href="#amenities" data-i18n="nav_amenities">الخدمات</a></li>
+            <li><a href="#rooms" data-i18n="nav_rooms">الغرف</a></li>
+            <li><a href="#reviews" data-i18n="nav_reviews">التقييمات</a></li>
+            <li><a href="#location" data-i18n="nav_location">الموقع</a></li>
+            <li><a href="#book" class="btn-primary" style="padding:0.5rem 1.2rem;" data-i18n="nav_book">احجز الآن</a>
+            </li>
+        </ul>
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="setLang('ar')">عر</button>
+            <button class="lang-btn" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" onclick="setLang('tr')">TR</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <p class="hero-eyebrow">✦ بورصا، تركيا ✦</p>
+            <h1 class="hero-title">İnkaya<br><em>Hotel</em></h1>
+            <p class="hero-sub" data-i18n="hero_sub">فندق 3 نجوم · تجربة ضيافة أصيلة في قلب بورصا</p>
+            <div class="hero-cta">
+                <a href="#book" class="btn-primary" data-i18n="hero_book">احجز غرفتك</a>
+                <a href="#about" class="btn-outline" data-i18n="hero_discover">اكتشف المزيد</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING BAR -->
+    <div class="booking-bar" id="book">
+        <div>
+            <label data-i18n="book_checkin">تسجيل الوصول</label>
+            <input type="date" id="bar_checkin">
+        </div>
+        <div class="divider-v"></div>
+        <div>
+            <label data-i18n="book_checkout">تسجيل المغادرة</label>
+            <input type="date" id="bar_checkout">
+        </div>
+        <div class="divider-v"></div>
+        <div>
+            <label data-i18n="book_guests">الضيوف</label>
+            <select id="bar_guests">
+                <option>1</option>
+                <option selected>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+        </div>
+        <div class="divider-v"></div>
+        <div>
+            <label data-i18n="book_room">نوع الغرفة</label>
+            <select id="bar_room">
+                <option value="single" data-i18n="room_single">غرفة مفردة</option>
+                <option value="double" data-i18n="room_double">غرفة مزدوجة</option>
+                <option value="suite" data-i18n="room_suite">جناح</option>
+            </select>
+        </div>
+        <button class="btn-primary" onclick="openBookingModal()" data-i18n="book_btn">تحقق من التوفر</button>
+    </div>
+
+    <!-- BOOKING MODAL -->
+    <div id="bookingModal"
+        style="display:none; position:fixed; inset:0; z-index:999; background:rgba(0,0,0,0.75); backdrop-filter:blur(6px); align-items:center; justify-content:center;">
+        <div id="modalBox"
+            style="background:#1A1916; border:1px solid rgba(200,169,110,0.3); border-radius:4px; max-width:520px; width:90%; max-height:90vh; overflow-y:auto; padding:2.5rem; position:relative; animation: fadeUp 0.3s ease both;">
+
+            <!-- Success Screen -->
+            <div id="successScreen" style="display:none; text-align:center; padding:2rem 0;">
+                <div style="font-size:3.5rem; margin-bottom:1rem;">✅</div>
+                <h3 style="font-family:'Playfair Display',serif; font-size:1.6rem; color:#C8A96E; margin-bottom:0.8rem;"
+                    id="successTitle">تم تأكيد حجزك!</h3>
+                <p style="color:#8A8070; margin-bottom:0.5rem;" id="successSub">سيتواصل معك فريق الفندق قريباً</p>
+                <div id="successDetails"
+                    style="background:#0F0E0C; border:1px solid rgba(200,169,110,0.2); border-radius:4px; padding:1.2rem; margin:1.5rem 0; text-align:right; font-size:0.9rem; line-height:2;">
+                </div>
+                <button class="btn-primary" onclick="closeModal()" id="successClose">إغلاق</button>
+            </div>
+
+            <!-- Form Screen -->
+            <div id="formScreen">
+                <button onclick="closeModal()"
+                    style="position:absolute;top:1rem;left:1rem;background:none;border:none;color:#8A8070;font-size:1.4rem;cursor:pointer;line-height:1;">✕</button>
+                <p style="font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:#C8A96E;margin-bottom:0.5rem;"
+                    id="modalEyebrow">تأكيد الحجز</p>
+                <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:#F5F0E8;margin-bottom:1.5rem;"
+                    id="modalTitle">إنكايا هوتيل – بورصا</h3>
+
+                <!-- Summary Bar -->
+                <div id="bookSummary"
+                    style="background:#0F0E0C;border:1px solid rgba(200,169,110,0.2);border-radius:4px;padding:1rem 1.2rem;margin-bottom:1.5rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-size:0.85rem;">
+                    <span>📅 <span id="sumDates">–</span></span>
+                    <span>👥 <span id="sumGuests">–</span></span>
+                    <span>🛏 <span id="sumRoom">–</span></span>
+                    <span style="color:#C8A96E;font-weight:700;">💵 <span id="sumPrice">–</span></span>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+                    <div>
+                        <label
+                            style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#8A8070;display:block;margin-bottom:0.4rem;"
+                            id="lbl_fname">الاسم الأول</label>
+                        <input id="inp_fname" type="text" placeholder="محمد"
+                            style="width:100%;background:#0F0E0C;border:1px solid rgba(200,169,110,0.3);border-radius:2px;color:#F5F0E8;padding:0.7rem;font-family:'Tajawal',sans-serif;font-size:0.95rem;outline:none;"
+                            onfocus="this.style.borderColor='#C8A96E'"
+                            onblur="this.style.borderColor='rgba(200,169,110,0.3)'">
+                    </div>
+                    <div>
+                        <label
+                            style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#8A8070;display:block;margin-bottom:0.4rem;"
+                            id="lbl_lname">اسم العائلة</label>
+                        <input id="inp_lname" type="text" placeholder="الأحمد"
+                            style="width:100%;background:#0F0E0C;border:1px solid rgba(200,169,110,0.3);border-radius:2px;color:#F5F0E8;padding:0.7rem;font-family:'Tajawal',sans-serif;font-size:0.95rem;outline:none;"
+                            onfocus="this.style.borderColor='#C8A96E'"
+                            onblur="this.style.borderColor='rgba(200,169,110,0.3)'">
+                    </div>
+                </div>
+                <div style="margin-bottom:1rem;">
+                    <label
+                        style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#8A8070;display:block;margin-bottom:0.4rem;"
+                        id="lbl_email">البريد الإلكتروني</label>
+                    <input id="inp_email" type="email" placeholder="example@email.com"
+                        style="width:100%;background:#0F0E0C;border:1px solid rgba(200,169,110,0.3);border-radius:2px;color:#F5F0E8;padding:0.7rem;font-family:'Tajawal',sans-serif;font-size:0.95rem;outline:none;"
+                        onfocus="this.style.borderColor='#C8A96E'"
+                        onblur="this.style.borderColor='rgba(200,169,110,0.3)'">
+                </div>
+                <div style="margin-bottom:1rem;">
+                    <label
+                        style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#8A8070;display:block;margin-bottom:0.4rem;"
+                        id="lbl_phone">رقم الهاتف</label>
+                    <input id="inp_phone" type="tel" placeholder="+90 5xx xxx xx xx"
+                        style="width:100%;background:#0F0E0C;border:1px solid rgba(200,169,110,0.3);border-radius:2px;color:#F5F0E8;padding:0.7rem;font-family:'Tajawal',sans-serif;font-size:0.95rem;outline:none;"
+                        onfocus="this.style.borderColor='#C8A96E'"
+                        onblur="this.style.borderColor='rgba(200,169,110,0.3)'">
+                </div>
+                <div style="margin-bottom:1.5rem;">
+                    <label
+                        style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#8A8070;display:block;margin-bottom:0.4rem;"
+                        id="lbl_notes">ملاحظات خاصة (اختياري)</label>
+                    <textarea id="inp_notes" rows="2" placeholder="وصول متأخر، طلبات خاصة..."
+                        style="width:100%;background:#0F0E0C;border:1px solid rgba(200,169,110,0.3);border-radius:2px;color:#F5F0E8;padding:0.7rem;font-family:'Tajawal',sans-serif;font-size:0.95rem;outline:none;resize:vertical;"
+                        onfocus="this.style.borderColor='#C8A96E'"
+                        onblur="this.style.borderColor='rgba(200,169,110,0.3)'"></textarea>
+                </div>
+                <div id="errMsg"
+                    style="display:none;color:#E24B4A;font-size:0.85rem;margin-bottom:1rem;padding:0.7rem;background:rgba(226,75,74,0.1);border-radius:2px;">
+                </div>
+                <button class="btn-primary" onclick="submitBooking()" style="width:100%;padding:1rem;font-size:1rem;"
+                    id="submitBtn">تأكيد الحجز</button>
+                <p style="text-align:center;color:#8A8070;font-size:0.75rem;margin-top:1rem;" id="modalNote">* الحجز
+                    مجاني الإلغاء · لا يُطلب بطاقة ائتمان الآن</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="about reveal" id="about">
+        <div class="about-images">
+            <img class="about-img-main" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80"
+                alt="Hotel Exterior">
+            <img class="about-img-accent" src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80"
+                alt="Hotel Room">
+            <div class="gold-badge">
+                <span class="num">3★</span>
+                <span class="txt">STAR HOTEL</span>
+            </div>
+        </div>
+        <div>
+            <p class="section-eyebrow" data-i18n="about_eyebrow">منذ سنوات · قلب بورصا</p>
+            <h2 class="section-title" data-i18n="about_title">فندق <em>أصيل</em> بخدمة دافئة</h2>
+            <p class="section-desc" data-i18n="about_desc">يقع İnkaya Hotel في حي كورتوغلو بمدينة بورصا التاريخية، ويقدم
+                تجربة إقامة مريحة بأسعار مناسبة. يتميز الفندق بفريق استقبال ودود ومحترف، وحراسة أمنية على مدار الساعة،
+                وموقف سيارات داخلي مجاني، وإفطار يومي شهي.</p>
+            <div class="stats-row">
+                <div class="stat">
+                    <span class="num">126</span>
+                    <span class="lbl" data-i18n="stat_reviews">تقييم ضيوف</span>
+                </div>
+                <div class="stat">
+                    <span class="num">3.9</span>
+                    <span class="lbl" data-i18n="stat_rating">تقييم عام</span>
+                </div>
+                <div class="stat">
+                    <span class="num">24/7</span>
+                    <span class="lbl" data-i18n="stat_security">حراسة أمنية</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AMENITIES -->
+    <section class="amenities reveal" id="amenities">
+        <div style="text-align:center; margin-bottom:1rem;">
+            <p class="section-eyebrow" data-i18n="amenities_eyebrow">ما نقدمه لك</p>
+            <h2 class="section-title" data-i18n="amenities_title">وسائل الراحة <em>والخدمات</em></h2>
+        </div>
+        <div class="amenities-grid">
+            <div class="amenity-card">
+                <span class="amenity-icon">🌐</span>
+                <h3 data-i18n="amen_wifi">Wi-Fi مجاني</h3>
+                <p data-i18n="amen_wifi_desc">اتصال سريع في جميع أنحاء الفندق</p>
+            </div>
+            <div class="amenity-card">
+                <span class="amenity-icon">🅿️</span>
+                <h3 data-i18n="amen_parking">موقف مجاني</h3>
+                <p data-i18n="amen_parking_desc">مرآب داخلي خاص ومؤمّن</p>
+            </div>
+            <div class="amenity-card">
+                <span class="amenity-icon">🍳</span>
+                <h3 data-i18n="amen_breakfast">إفطار مجاني</h3>
+                <p data-i18n="amen_breakfast_desc">وجبة إفطار يومية شاملة</p>
+            </div>
+            <div class="amenity-card">
+                <span class="amenity-icon">❄️</span>
+                <h3 data-i18n="amen_ac">تكييف هواء</h3>
+                <p data-i18n="amen_ac_desc">تحكم كامل في درجة الحرارة</p>
+            </div>
+            <div class="amenity-card">
+                <span class="amenity-icon">🛡️</span>
+                <h3 data-i18n="amen_security">أمن 24 ساعة</h3>
+                <p data-i18n="amen_security_desc">حراسة على مدار الساعة</p>
+            </div>
+            <div class="amenity-card">
+                <span class="amenity-icon">🛎️</span>
+                <h3 data-i18n="amen_room">خدمة الغرف</h3>
+                <p data-i18n="amen_room_desc">خدمة متميزة داخل غرفتك</p>
+            </div>
+            <div class="amenity-card">
+                <span class="amenity-icon">👔</span>
+                <h3 data-i18n="amen_laundry">غسيل الملابس</h3>
+                <p data-i18n="amen_laundry_desc">خدمة مصبغة احترافية</p>
+            </div>
+            <div class="amenity-card">
+                <span class="amenity-icon">♿</span>
+                <h3 data-i18n="amen_access">إمكانية وصول</h3>
+                <p data-i18n="amen_access_desc">مناسب لذوي الاحتياجات الخاصة</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROOMS -->
+    <section class="rooms reveal" id="rooms">
+        <div class="rooms-header">
+            <div>
+                <p class="section-eyebrow" data-i18n="rooms_eyebrow">غرف وأجنحة</p>
+                <h2 class="section-title" data-i18n="rooms_title">اختر <em>غرفتك</em></h2>
+            </div>
+            <a href="#book" class="btn-outline" data-i18n="rooms_all">عرض جميع الغرف</a>
+        </div>
+        <div class="rooms-grid">
+            <div class="room-card">
+                <div class="room-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=700&q=80"
+                        alt="Single Room">
+                </div>
+                <div class="room-info">
+                    <p class="room-type" data-i18n="room_single">غرفة مفردة</p>
+                    <h3 class="room-name" data-i18n="room_single_name">الغرفة الكلاسيكية</h3>
+                    <div class="room-features">
+                        <span class="room-feat">🛏 <span data-i18n="bed_single">سرير مفرد</span></span>
+                        <span class="room-feat">📶 Wi-Fi</span>
+                        <span class="room-feat">❄️ A/C</span>
+                    </div>
+                    <div class="room-price-row">
+                        <div class="room-price">$36 <span data-i18n="per_night">/ ليلة</span></div>
+                        <button onclick="openBookingModal('single')" class="btn-primary"
+                            style="padding:0.5rem 1.2rem;font-size:0.75rem;" data-i18n="book_now">احجز</button>
+                    </div>
+                </div>
+            </div>
+            <div class="room-card">
+                <div class="room-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=700&q=80"
+                        alt="Double Room">
+                </div>
+                <div class="room-info">
+                    <p class="room-type" data-i18n="room_double">غرفة مزدوجة</p>
+                    <h3 class="room-name" data-i18n="room_double_name">غرفة الضيوف المزدوجة</h3>
+                    <div class="room-features">
+                        <span class="room-feat">🛏 <span data-i18n="bed_double">سرير مزدوج</span></span>
+                        <span class="room-feat">📶 Wi-Fi</span>
+                        <span class="room-feat">🍳 <span data-i18n="breakfast_incl">إفطار</span></span>
+                    </div>
+                    <div class="room-price-row">
+                        <div class="room-price">$48 <span data-i18n="per_night">/ ليلة</span></div>
+                        <button onclick="openBookingModal('double')" class="btn-primary"
+                            style="padding:0.5rem 1.2rem;font-size:0.75rem;" data-i18n="book_now">احجز</button>
+                    </div>
+                </div>
+            </div>
+            <div class="room-card">
+                <div class="room-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=700&q=80" alt="Suite">
+                </div>
+                <div class="room-info">
+                    <p class="room-type" data-i18n="room_suite">جناح فاخر</p>
+                    <h3 class="room-name" data-i18n="room_suite_name">الجناح البلاتيني</h3>
+                    <div class="room-features">
+                        <span class="room-feat">🛏 <span data-i18n="bed_king">كينج</span></span>
+                        <span class="room-feat">🛁 <span data-i18n="bath">حمام خاص</span></span>
+                        <span class="room-feat">🍳 <span data-i18n="breakfast_incl">إفطار</span></span>
+                    </div>
+                    <div class="room-price-row">
+                        <div class="room-price">$85 <span data-i18n="per_night">/ ليلة</span></div>
+                        <button onclick="openBookingModal('suite')" class="btn-primary"
+                            style="padding:0.5rem 1.2rem;font-size:0.75rem;" data-i18n="book_now">احجز</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews reveal" id="reviews">
+        <div style="text-align:center; margin-bottom:1rem;">
+            <p class="section-eyebrow" data-i18n="reviews_eyebrow">آراء ضيوفنا</p>
+            <h2 class="section-title" data-i18n="reviews_title">ما يقوله <em>ضيوفنا</em></h2>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text" data-i18n="review1">"فندق رائع بسعر ممتاز. الموظفون كانوا ودودين جداً وساعدونا في
+                    كل شيء. الإفطار كان لذيذاً والغرف نظيفة."</p>
+                <div class="review-author"><strong>Ahmed K.</strong> <span data-i18n="from_saudi">- المملكة العربية
+                        السعودية</span></div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★☆</div>
+                <p class="review-text" data-i18n="review2">"Sehr gutes Preis-Leistungs-Verhältnis. Das Personal war
+                    freundlich und hilfsbereit. Frühstück war gut, Zimmer sauber und komfortabel."</p>
+                <div class="review-author"><strong>Maria S.</strong> <span data-i18n="from_turkey">- Bursa,
+                        Türkiye</span></div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★☆</div>
+                <p class="review-text" data-i18n="review3">"Great location and friendly staff. Free parking was very
+                    convenient. The breakfast was fresh and delicious every morning."</p>
+                <div class="review-author"><strong>James R.</strong> <span data-i18n="from_uk">- United Kingdom</span>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:2.5rem;">
+            <p style="color:var(--text-muted); font-size:0.85rem;">
+                <span data-i18n="rating_based">تقييم بناءً على</span>
+                <span style="color:var(--gold); font-weight:700;">3.9/5</span> — 126 <span
+                    data-i18n="rating_reviews">تقييم على Google</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="location reveal" id="location">
+        <p class="section-eyebrow" data-i18n="location_eyebrow">كيف تصل إلينا</p>
+        <h2 class="section-title" data-i18n="location_title">الموقع <em>والوصول</em></h2>
+        <div class="location-grid">
+            <div class="location-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3044.7!2d29.0800!3d40.1880!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca15b8ffff!2sInkaya+Hotel!5e0!3m2!1sar!2str!4v1"
+                    allowfullscreen loading="lazy">
+                </iframe>
+            </div>
+            <ul class="location-list">
+                <li>
+                    <span class="loc-icon">📍</span>
+                    <div class="loc-info">
+                        <h4 data-i18n="loc_address">العنوان</h4>
+                        <p>Kurtoğlu, Yaşıt Sk. no:7, 16360 Yıldırım/Bursa, Türkiye</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="loc-icon">📞</span>
+                    <div class="loc-info">
+                        <h4 data-i18n="loc_phone">الهاتف</h4>
+                        <p>+90 501 066 14 16</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="loc-icon">🕐</span>
+                    <div class="loc-info">
+                        <h4 data-i18n="loc_checkin_time">تسجيل الوصول</h4>
+                        <p data-i18n="loc_checkin_val">12:00 ظهراً</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="loc-icon">🕙</span>
+                    <div class="loc-info">
+                        <h4 data-i18n="loc_checkout_time">تسجيل المغادرة</h4>
+                        <p data-i18n="loc_checkout_val">11:00 صباحاً</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="loc-icon">🚗</span>
+                    <div class="loc-info">
+                        <h4 data-i18n="loc_transport">المواصلات</h4>
+                        <p data-i18n="loc_transport_val">قريب من وسط المدينة والمواصلات العامة</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-section reveal">
+        <h2 data-i18n="cta_title">ابدأ رحلتك من بورصا معنا</h2>
+        <p data-i18n="cta_sub">أسعار تبدأ من $36 الليلة شاملة الإفطار والواي فاي والموقف</p>
+        <button onclick="openBookingModal()" class="btn-dark" data-i18n="cta_btn">احجز الآن بأفضل سعر</button>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo">İnkaya</div>
+                <p class="footer-desc" data-i18n="footer_desc">فندق 3 نجوم في قلب بورصا التاريخية، تركيا. ضيافة أصيلة
+                    وأسعار في متناول الجميع.</p>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer_hotel">الفندق</h4>
+                <ul>
+                    <li><a href="#about" data-i18n="nav_about">عن الفندق</a></li>
+                    <li><a href="#amenities" data-i18n="nav_amenities">الخدمات</a></li>
+                    <li><a href="#rooms" data-i18n="nav_rooms">الغرف</a></li>
+                    <li><a href="#reviews" data-i18n="nav_reviews">التقييمات</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer_book">الحجز</h4>
+                <ul>
+                    <li><a href="#book" data-i18n="book_direct">حجز مباشر</a></li>
+                    <li><a href="https://www.hotels.com" target="_blank">Hotels.com</a></li>
+                    <li><a href="https://www.trip.com" target="_blank">Trip.com</a></li>
+                    <li><a href="https://www.trivago.com" target="_blank">Trivago</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer_contact">تواصل معنا</h4>
+                <ul>
+                    <li><a href="tel:+905010661416">+90 501 066 14 16</a></li>
+                    <li><a href="#location" data-i18n="footer_map">خريطة الموقع</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 İnkaya Hotel, Bursa, Türkiye. <span data-i18n="rights">جميع الحقوق محفوظة.</span></span>
+            <div style="display:flex;gap:1rem;">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLang('ar')">عر</button>
+                    <button class="lang-btn" onclick="setLang('en')">EN</button>
+                    <button class="lang-btn" onclick="setLang('tr')">TR</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Translations
+        const translations = {
+            ar: {
+                dir: 'rtl',
+                nav_about: 'عن الفندق', nav_amenities: 'الخدمات', nav_rooms: 'الغرف',
+                nav_reviews: 'التقييمات', nav_location: 'الموقع', nav_book: 'احجز الآن',
+                hero_sub: 'فندق 3 نجوم · تجربة ضيافة أصيلة في قلب بورصا',
+                hero_book: 'احجز غرفتك', hero_discover: 'اكتشف المزيد',
+                book_checkin: 'تسجيل الوصول', book_checkout: 'تسجيل المغادرة',
+                book_guests: 'الضيوف', book_room: 'نوع الغرفة', book_btn: 'تحقق من التوفر',
+                about_eyebrow: 'منذ سنوات · قلب بورصا',
+                about_title: 'فندق <em>أصيل</em> بخدمة دافئة',
+                about_desc: 'يقع İnkaya Hotel في حي كورتوغلو بمدينة بورصا التاريخية، ويقدم تجربة إقامة مريحة بأسعار مناسبة. يتميز الفندق بفريق استقبال ودود ومحترف، وحراسة أمنية على مدار الساعة، وموقف سيارات داخلي مجاني، وإفطار يومي شهي.',
+                stat_reviews: 'تقييم ضيوف', stat_rating: 'تقييم عام', stat_security: 'حراسة أمنية',
+                amenities_eyebrow: 'ما نقدمه لك', amenities_title: 'وسائل الراحة <em>والخدمات</em>',
+                amen_wifi: 'Wi-Fi مجاني', amen_wifi_desc: 'اتصال سريع في جميع أنحاء الفندق',
+                amen_parking: 'موقف مجاني', amen_parking_desc: 'مرآب داخلي خاص ومؤمّن',
+                amen_breakfast: 'إفطار مجاني', amen_breakfast_desc: 'وجبة إفطار يومية شاملة',
+                amen_ac: 'تكييف هواء', amen_ac_desc: 'تحكم كامل في درجة الحرارة',
+                amen_security: 'أمن 24 ساعة', amen_security_desc: 'حراسة على مدار الساعة',
+                amen_room: 'خدمة الغرف', amen_room_desc: 'خدمة متميزة داخل غرفتك',
+                amen_laundry: 'غسيل الملابس', amen_laundry_desc: 'خدمة مصبغة احترافية',
+                amen_access: 'إمكانية وصول', amen_access_desc: 'مناسب لذوي الاحتياجات الخاصة',
+                rooms_eyebrow: 'غرف وأجنحة', rooms_title: 'اختر <em>غرفتك</em>', rooms_all: 'عرض جميع الغرف',
+                room_single: 'غرفة مفردة', room_single_name: 'الغرفة الكلاسيكية',
+                room_double: 'غرفة مزدوجة', room_double_name: 'غرفة الضيوف المزدوجة',
+                room_suite: 'جناح فاخر', room_suite_name: 'الجناح البلاتيني',
+                bed_single: 'سرير مفرد', bed_double: 'سرير مزدوج', bed_king: 'كينج', bath: 'حمام خاص',
+                breakfast_incl: 'إفطار', per_night: '/ ليلة', book_now: 'احجز',
+                reviews_eyebrow: 'آراء ضيوفنا', reviews_title: 'ما يقوله <em>ضيوفنا</em>',
+                review1: '"فندق رائع بسعر ممتاز. الموظفون كانوا ودودين جداً وساعدونا في كل شيء. الإفطار كان لذيذاً والغرف نظيفة."',
+                review2: '"Sehr gutes Preis-Leistungs-Verhältnis. Das Personal war freundlich und hilfsbereit."',
+                review3: '"Great location and friendly staff. Free parking was very convenient."',
+                from_saudi: '- المملكة العربية السعودية', from_turkey: '- بورصا، تركيا', from_uk: '- المملكة المتحدة',
+                rating_based: 'تقييم بناءً على', rating_reviews: 'تقييم على Google',
+                location_eyebrow: 'كيف تصل إلينا', location_title: 'الموقع <em>والوصول</em>',
+                loc_address: 'العنوان', loc_phone: 'الهاتف',
+                loc_checkin_time: 'تسجيل الوصول', loc_checkin_val: '12:00 ظهراً',
+                loc_checkout_time: 'تسجيل المغادرة', loc_checkout_val: '11:00 صباحاً',
+                loc_transport: 'المواصلات', loc_transport_val: 'قريب من وسط المدينة والمواصلات العامة',
+                cta_title: 'ابدأ رحلتك من بورصا معنا',
+                cta_sub: 'أسعار تبدأ من $36 الليلة شاملة الإفطار والواي فاي والموقف',
+                cta_btn: 'احجز الآن بأفضل سعر',
+                footer_desc: 'فندق 3 نجوم في قلب بورصا التاريخية، تركيا. ضيافة أصيلة وأسعار في متناول الجميع.',
+                footer_hotel: 'الفندق', footer_book: 'الحجز', footer_contact: 'تواصل معنا',
+                book_direct: 'حجز مباشر', footer_map: 'خريطة الموقع', rights: 'جميع الحقوق محفوظة.'
+            },
+            en: {
+                dir: 'ltr',
+                nav_about: 'About', nav_amenities: 'Amenities', nav_rooms: 'Rooms',
+                nav_reviews: 'Reviews', nav_location: 'Location', nav_book: 'Book Now',
+                hero_sub: '3-Star Hotel · Authentic Hospitality in the Heart of Bursa',
+                hero_book: 'Book Your Room', hero_discover: 'Discover More',
+                book_checkin: 'Check-in', book_checkout: 'Check-out',
+                book_guests: 'Guests', book_room: 'Room Type', book_btn: 'Check Availability',
+                about_eyebrow: 'Years of Hospitality · Central Bursa',
+                about_title: '<em>Authentic</em> Hotel with Warm Service',
+                about_desc: 'İnkaya Hotel is located in the Kurtoğlu neighborhood of historic Bursa, offering a comfortable stay at affordable prices. Our friendly reception team, 24/7 security, free indoor parking, and daily breakfast make your stay truly memorable.',
+                stat_reviews: 'Guest Reviews', stat_rating: 'Overall Rating', stat_security: '24/7 Security',
+                amenities_eyebrow: 'What We Offer', amenities_title: 'Amenities <em>& Services</em>',
+                amen_wifi: 'Free Wi-Fi', amen_wifi_desc: 'High-speed internet throughout the hotel',
+                amen_parking: 'Free Parking', amen_parking_desc: 'Private secured indoor garage',
+                amen_breakfast: 'Free Breakfast', amen_breakfast_desc: 'Full daily breakfast included',
+                amen_ac: 'Air Conditioning', amen_ac_desc: 'Full temperature control in rooms',
+                amen_security: '24/7 Security', amen_security_desc: 'Round-the-clock security service',
+                amen_room: 'Room Service', amen_room_desc: 'Premium service delivered to your room',
+                amen_laundry: 'Laundry Service', amen_laundry_desc: 'Professional laundry & dry cleaning',
+                amen_access: 'Accessibility', amen_access_desc: 'Facilities for guests with special needs',
+                rooms_eyebrow: 'Rooms & Suites', rooms_title: 'Choose <em>Your Room</em>', rooms_all: 'View All Rooms',
+                room_single: 'Single Room', room_single_name: 'Classic Room',
+                room_double: 'Double Room', room_double_name: 'Guest Double Room',
+                room_suite: 'Luxury Suite', room_suite_name: 'Platinum Suite',
+                bed_single: 'Single Bed', bed_double: 'Double Bed', bed_king: 'King Bed', bath: 'Private Bath',
+                breakfast_incl: 'Breakfast', per_night: '/ night', book_now: 'Book',
+                reviews_eyebrow: 'Guest Voices', reviews_title: 'What <em>Our Guests</em> Say',
+                review1: '"A wonderful hotel at a great price. The staff were very friendly and helpful. Breakfast was delicious and rooms were clean."',
+                review2: '"Sehr gutes Preis-Leistungs-Verhältnis. Das Personal war freundlich und hilfsbereit."',
+                review3: '"Great location and friendly staff. Free parking was very convenient. The breakfast was fresh every morning."',
+                from_saudi: '- Saudi Arabia', from_turkey: '- Bursa, Turkey', from_uk: '- United Kingdom',
+                rating_based: 'Rating based on', rating_reviews: 'reviews on Google',
+                location_eyebrow: 'How to Find Us', location_title: 'Location <em>& Access</em>',
+                loc_address: 'Address', loc_phone: 'Phone',
+                loc_checkin_time: 'Check-in Time', loc_checkin_val: '12:00 PM',
+                loc_checkout_time: 'Check-out Time', loc_checkout_val: '11:00 AM',
+                loc_transport: 'Transportation', loc_transport_val: 'Close to city center and public transport',
+                cta_title: 'Start Your Bursa Journey With Us',
+                cta_sub: 'Prices starting from $36/night including breakfast, Wi-Fi & parking',
+                cta_btn: 'Book Now – Best Price Guaranteed',
+                footer_desc: '3-Star hotel in the heart of historic Bursa, Turkey. Authentic hospitality at accessible prices.',
+                footer_hotel: 'Hotel', footer_book: 'Booking', footer_contact: 'Contact',
+                book_direct: 'Direct Booking', footer_map: 'Map', rights: 'All rights reserved.'
+            },
+            tr: {
+                dir: 'ltr',
+                nav_about: 'Hakkımızda', nav_amenities: 'Olanaklar', nav_rooms: 'Odalar',
+                nav_reviews: 'Yorumlar', nav_location: 'Konum', nav_book: 'Rezervasyon',
+                hero_sub: '3 Yıldızlı Otel · Bursa\'nın Kalbinde Samimi Konaklama',
+                hero_book: 'Oda Rezervasyonu', hero_discover: 'Keşfet',
+                book_checkin: 'Giriş Tarihi', book_checkout: 'Çıkış Tarihi',
+                book_guests: 'Misafir Sayısı', book_room: 'Oda Tipi', book_btn: 'Müsaitlik Kontrol',
+                about_eyebrow: 'Yılların Deneyimi · Bursa Merkez',
+                about_title: '<em>Samimi</em> Hizmetiyle Özgün Otel',
+                about_desc: 'İnkaya Hotel, tarihi Bursa\'nın Kurtoğlu mahallesinde yer almakta olup uygun fiyatlarla konforlu bir konaklama sunmaktadır. Güler yüzlü resepsiyon ekibimiz, 24 saat güvenlik, ücretsiz kapalı otopark ve günlük kahvaltı ile konaklamanızı unutulmaz kılıyoruz.',
+                stat_reviews: 'Misafir Yorumu', stat_rating: 'Genel Puan', stat_security: '7/24 Güvenlik',
+                amenities_eyebrow: 'Sunduklarımız', amenities_title: 'Olanaklar <em>ve Hizmetler</em>',
+                amen_wifi: 'Ücretsiz Wi-Fi', amen_wifi_desc: 'Otelin her yerinde hızlı internet',
+                amen_parking: 'Ücretsiz Otopark', amen_parking_desc: 'Güvenli kapalı özel garaj',
+                amen_breakfast: 'Ücretsiz Kahvaltı', amen_breakfast_desc: 'Her gün açık büfe kahvaltı',
+                amen_ac: 'Klima', amen_ac_desc: 'Odalarda tam ısı kontrolü',
+                amen_security: '7/24 Güvenlik', amen_security_desc: 'Kesintisiz güvenlik hizmeti',
+                amen_room: 'Oda Servisi', amen_room_desc: 'Odanıza özel hizmet',
+                amen_laundry: 'Çamaşır Servisi', amen_laundry_desc: 'Profesyonel çamaşır hizmeti',
+                amen_access: 'Erişilebilirlik', amen_access_desc: 'Engelli misafirler için uygun tesisler',
+                rooms_eyebrow: 'Odalar ve Süitler', rooms_title: '<em>Odanızı</em> Seçin', rooms_all: 'Tüm Odaları Gör',
+                room_single: 'Tek Kişilik', room_single_name: 'Klasik Oda',
+                room_double: 'Çift Kişilik', room_double_name: 'Çift Kişilik Oda',
+                room_suite: 'Lüks Suit', room_suite_name: 'Platin Suit',
+                bed_single: 'Tek Yatak', bed_double: 'Çift Yatak', bed_king: 'King Yatak', bath: 'Özel Banyo',
+                breakfast_incl: 'Kahvaltı', per_night: '/ gece', book_now: 'Rezervasyon',
+                reviews_eyebrow: 'Misafir Görüşleri', reviews_title: 'Misafirlerimiz <em>Ne Diyor?</em>',
+                review1: '"Harika bir otel, mükemmel fiyata. Personel çok yardımseverdi. Kahvaltı lezzetliydi ve odalar temizdi."',
+                review2: '"Sehr gutes Preis-Leistungs-Verhältnis. Das Personal war freundlich und hilfsbereit."',
+                review3: '"Harika konum ve güler yüzlü personel. Ücretsiz otopark çok kullanışlıydı."',
+                from_saudi: '- Suudi Arabistan', from_turkey: '- Bursa, Türkiye', from_uk: '- Birleşik Krallık',
+                rating_based: 'Puan', rating_reviews: "Google yorumuna dayanmaktadır",
+                location_eyebrow: 'Bize Nasıl Ulaşırsınız', location_title: 'Konum <em>ve Ulaşım</em>',
+                loc_address: 'Adres', loc_phone: 'Telefon',
+                loc_checkin_time: 'Giriş Saati', loc_checkin_val: '12:00',
+                loc_checkout_time: 'Çıkış Saati', loc_checkout_val: '11:00',
+                loc_transport: 'Ulaşım', loc_transport_val: 'Şehir merkezi ve toplu taşımaya yakın',
+                cta_title: "Bursa Yolculuğunuza Bizimle Başlayın",
+                cta_sub: 'Kahvaltı, Wi-Fi ve otopark dahil gecelik $36\'dan başlayan fiyatlar',
+                cta_btn: 'Hemen Rezervasyon Yap',
+                footer_desc: "Tarihi Bursa'nın kalbinde 3 yıldızlı otel. Samimi misafirperverlik, uygun fiyatlar.",
+                footer_hotel: 'Otel', footer_book: 'Rezervasyon', footer_contact: 'İletişim',
+                book_direct: 'Direkt Rezervasyon', footer_map: 'Harita', rights: 'Tüm hakları saklıdır.'
+            }
+        };
+
+        let currentLang = 'ar';
+
+        const prices = { single: 36, double: 48, suite: 85 };
+
+        const modalLabels = {
+            ar: {
+                eyebrow: 'تأكيد الحجز', title: 'إنكايا هوتيل – بورصا',
+                fname: 'الاسم الأول', lname: 'اسم العائلة', email: 'البريد الإلكتروني',
+                phone: 'رقم الهاتف', notes: 'ملاحظات خاصة (اختياري)',
+                submit: 'تأكيد الحجز', note: '* الحجز مجاني الإلغاء · لا يُطلب بطاقة ائتمان الآن',
+                err_fields: 'يرجى تعبئة جميع الحقول المطلوبة',
+                err_email: 'البريد الإلكتروني غير صحيح',
+                err_dates: 'تاريخ المغادرة يجب أن يكون بعد تاريخ الوصول',
+                success_title: '✅ تم تأكيد حجزك!',
+                success_sub: 'سيتواصل معك فريق الفندق قريباً على بريدك الإلكتروني',
+                close: 'إغلاق',
+                night: 'ليلة', nights: 'ليالٍ', guest: 'ضيف',
+                rooms: { single: 'غرفة مفردة', double: 'غرفة مزدوجة', suite: 'جناح فاخر' },
+                total: 'الإجمالي'
+            },
+            en: {
+                eyebrow: 'Confirm Booking', title: 'İnkaya Hotel – Bursa',
+                fname: 'First Name', lname: 'Last Name', email: 'Email Address',
+                phone: 'Phone Number', notes: 'Special Requests (optional)',
+                submit: 'Confirm Booking', note: '* Free cancellation · No credit card required now',
+                err_fields: 'Please fill in all required fields',
+                err_email: 'Please enter a valid email address',
+                err_dates: 'Check-out must be after check-in',
+                success_title: '✅ Booking Confirmed!',
+                success_sub: 'Our team will contact you shortly at your email address',
+                close: 'Close',
+                night: 'night', nights: 'nights', guest: 'guest',
+                rooms: { single: 'Single Room', double: 'Double Room', suite: 'Luxury Suite' },
+                total: 'Total'
+            },
+            tr: {
+                eyebrow: 'Rezervasyonu Onayla', title: 'İnkaya Hotel – Bursa',
+                fname: 'Ad', lname: 'Soyad', email: 'E-posta Adresi',
+                phone: 'Telefon Numarası', notes: 'Özel İstekler (isteğe bağlı)',
+                submit: 'Rezervasyonu Onayla', note: '* Ücretsiz iptal · Şimdi kredi kartı gerekmez',
+                err_fields: 'Lütfen tüm zorunlu alanları doldurun',
+                err_email: 'Geçerli bir e-posta adresi girin',
+                err_dates: 'Çıkış tarihi giriş tarihinden sonra olmalıdır',
+                success_title: '✅ Rezervasyonunuz Onaylandı!',
+                success_sub: 'Ekibimiz yakında e-posta adresinizden sizinle iletişime geçecek',
+                close: 'Kapat',
+                night: 'gece', nights: 'gece', guest: 'misafir',
+                rooms: { single: 'Tek Kişilik', double: 'Çift Kişilik', suite: 'Lüks Suit' },
+                total: 'Toplam'
+            }
+        };
+
+        // Set dynamic default dates (today + tomorrow)
+        function initDates() {
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(today.getDate() + 1);
+            const fmt = d => d.toISOString().split('T')[0];
+            const ci = document.getElementById('bar_checkin');
+            const co = document.getElementById('bar_checkout');
+            ci.value = fmt(today);
+            co.value = fmt(tomorrow);
+            ci.min = fmt(today);
+            co.min = fmt(tomorrow);
+            ci.addEventListener('change', () => {
+                const next = new Date(ci.value);
+                next.setDate(next.getDate() + 1);
+                co.min = fmt(next);
+                if (co.value <= ci.value) co.value = fmt(next);
+            });
+        }
+
+        function openBookingModal(roomType) {
+            const m = document.getElementById('bookingModal');
+            const l = modalLabels[currentLang];
+            // pre-select room if provided
+            if (roomType) document.getElementById('bar_room').value = roomType;
+
+            // Update modal labels
+            document.getElementById('modalEyebrow').textContent = l.eyebrow;
+            document.getElementById('modalTitle').textContent = l.title;
+            document.getElementById('lbl_fname').textContent = l.fname;
+            document.getElementById('lbl_lname').textContent = l.lname;
+            document.getElementById('lbl_email').textContent = l.email;
+            document.getElementById('lbl_phone').textContent = l.phone;
+            document.getElementById('lbl_notes').textContent = l.notes;
+            document.getElementById('submitBtn').textContent = l.submit;
+            document.getElementById('modalNote').textContent = l.note;
+            document.getElementById('errMsg').style.display = 'none';
+
+            // Build summary
+            const ci = document.getElementById('bar_checkin').value;
+            const co = document.getElementById('bar_checkout').value;
+            const guests = document.getElementById('bar_guests').value;
+            const room = document.getElementById('bar_room').value;
+            const nights = ci && co ? Math.max(1, Math.round((new Date(co) - new Date(ci)) / (1000 * 60 * 60 * 24))) : 1;
+            const total = nights * prices[room];
+            const roomName = l.rooms[room] || room;
+            const nightLabel = nights === 1 ? l.night : l.nights;
+
+            document.getElementById('sumDates').textContent = ci && co ? `${ci} → ${co}` : '–';
+            document.getElementById('sumGuests').textContent = `${guests} ${l.guest}`;
+            document.getElementById('sumRoom').textContent = roomName;
+            document.getElementById('sumPrice').textContent = `$${total} (${nights} ${nightLabel})`;
+
+            // Show form, hide success
+            document.getElementById('formScreen').style.display = '';
+            document.getElementById('successScreen').style.display = 'none';
+            m.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+            document.body.style.overflow = '';
+            // Clear inputs
+            ['inp_fname', 'inp_lname', 'inp_email', 'inp_phone', 'inp_notes'].forEach(id => {
+                document.getElementById(id).value = '';
+            });
+        }
+
+        // Close modal on backdrop click
+        document.getElementById('bookingModal').addEventListener('click', function (e) {
+            if (e.target === this) closeModal();
+        });
+
+        function submitBooking() {
+            const l = modalLabels[currentLang];
+            const fname = document.getElementById('inp_fname').value.trim();
+            const lname = document.getElementById('inp_lname').value.trim();
+            const email = document.getElementById('inp_email').value.trim();
+            const phone = document.getElementById('inp_phone').value.trim();
+            const errEl = document.getElementById('errMsg');
+
+            if (!fname || !lname || !email || !phone) {
+                errEl.textContent = l.err_fields;
+                errEl.style.display = 'block';
+                return;
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                errEl.textContent = l.err_email;
+                errEl.style.display = 'block';
+                return;
+            }
+            const ci = document.getElementById('bar_checkin').value;
+            const co = document.getElementById('bar_checkout').value;
+            if (ci && co && co <= ci) {
+                errEl.textContent = l.err_dates;
+                errEl.style.display = 'block';
+                return;
+            }
+            errEl.style.display = 'none';
+
+            // Show success
+            const room = document.getElementById('bar_room').value;
+            const guests = document.getElementById('bar_guests').value;
+            const nights = ci && co ? Math.max(1, Math.round((new Date(co) - new Date(ci)) / (1000 * 60 * 60 * 24))) : 1;
+            const total = nights * prices[room];
+            const nightLabel = nights === 1 ? l.night : l.nights;
+            const roomName = l.rooms[room];
+
+            document.getElementById('successTitle').textContent = l.success_title;
+            document.getElementById('successSub').textContent = l.success_sub;
+            document.getElementById('successClose').textContent = l.close;
+
+            const dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.getElementById('successDetails').style.direction = dir;
+            document.getElementById('successDetails').innerHTML = `
+    <div>👤 ${fname} ${lname}</div>
+    <div>✉️ ${email}</div>
+    <div>📞 ${phone}</div>
+    <div>📅 ${ci} → ${co}</div>
+    <div>🛏 ${roomName} · ${guests} ${l.guest}</div>
+    <div style="color:#C8A96E;font-weight:700;border-top:1px solid rgba(200,169,110,0.2);padding-top:0.5rem;margin-top:0.5rem;">
+      💵 ${l.total}: $${total} (${nights} ${nightLabel})
+    </div>
+  `;
+            document.getElementById('formScreen').style.display = 'none';
+            document.getElementById('successScreen').style.display = 'block';
+        }
+
+        function setLang(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            document.documentElement.setAttribute('dir', t.dir);
+            document.documentElement.setAttribute('lang', lang);
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) el.innerHTML = t[key];
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.trim().toLowerCase() === lang ||
+                    (lang === 'ar' && btn.textContent.trim() === 'عر')) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Init
+        initDates();
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Sticky nav shadow
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').style.boxShadow =
+                window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.5)' : 'none';
+        });
+    </script>
+</body>
+
+</html>
